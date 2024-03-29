@@ -5,4 +5,7 @@ public class group{
    public void printName(){
     return "Maksym Yarosh";
   }
+  public void getGroupMembers(){
+    printingName();
+  }
 }
