@@ -7,5 +7,6 @@ public class group{
   }
   public void getGroupMembers(){
     printingName();
+    printName();
   }
 }
