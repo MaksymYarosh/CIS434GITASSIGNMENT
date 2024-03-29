@@ -15,6 +15,12 @@ public class group{
       throw new ArithmeticException;
     return x;
   }
+  public int multiply(int num1, int num2){
+        return num1 * num2;
+    }
+  public int power(int num1, int num2){
+        return Math.pow(num1, num2);
+    }
     
       
 }
