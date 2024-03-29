@@ -9,4 +9,12 @@ public class group{
     printingName();
     printName();
   }
+  public int division(int num1, int num2){
+    int x = num1/num2;
+    if(num2 == 0 || num1 % num2 ==0 )
+      throw new ArithmeticException;
+    return x;
+  }
+    
+      
 }
