@@ -5,9 +5,14 @@ public class group{
    public void printName(){
     return "Maksym Yarosh";
   }
+  public void printedName(){
+    return "Malik Jamal";
+  }
+  
   public void getGroupMembers(){
     printingName();
     printName();
+    printedName();
   }
   public int division(int num1, int num2){
     int x = num1/num2;
