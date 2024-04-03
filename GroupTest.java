@@ -46,7 +46,6 @@ public class GroupTest{
 
     @Test
     public void testGetGroupMembers() {
-        // We can, however, test if they run without errors.
         Group instance = new Group();
         instance.getGroupMembers(); // No assertions because it doesn't return anything
     }
