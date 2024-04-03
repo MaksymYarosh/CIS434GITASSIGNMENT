@@ -28,34 +28,34 @@ public class GroupTest{
 
     @Test
     public void testPrintingName() {
-        GroupTest group = new GroupTest();
-        assertEquals("Manikdeep Kaur LNU", group.printingName());
+        Group instance = new Group();
+        assertEquals("Manikdeep Kaur LNU", instance.printingName());
     }
 
     @Test
     public void testPrintName() {
-        GroupTest group = new GroupTest();
-        assertEquals("Maksym Yarosh", group.printName());
+        Group instance = new Group();
+        assertEquals("Maksym Yarosh", instance.printName());
     }
 
     @Test
     public void testPrintedName() {
-        GroupTest group = new GroupTest();
-        assertEquals("Malik Jamal", group.printedName());
+        Group instance = new Group();
+        assertEquals("Malik Jamal", instance.printedName());
     }
 
     @Test
     public void testGetGroupMembers() {
         // We can, however, test if they run without errors.
-        GroupTest group = new GroupTest();
-        group.getGroupMembers(); // No assertions because it doesn't return anything
+        Group instance = new Group();
+        instance.getGroupMembers(); // No assertions because it doesn't return anything
     }
 
     @Test(expected=ArithmeticException.class)
     public void testIntegerDivision() {
-        GroupTest group = new GroupTest();
-        assertEquals(2, group.division(8, 4));//Positive division
-        assertEquals(0, group.division(0, 5)); // Testing division by zero
-        assertEquals(-2, group.division(-8,4));//Negative division 
+        Group instance = new Group();
+        assertEquals(2, instance.division(8, 4));//Positive division
+        assertEquals(0, instance.division(0, 5)); // Testing division by zero
+        assertEquals(-2, instance.division(-8,4));//Negative division 
 }
 }
