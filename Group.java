@@ -1,22 +1,24 @@
-public class group{
-  public void printingName(){
+
+public class Group{
+  
+  public String printingName(){
     return "Manikdeep Kaur LNU";
   }
-   public void printName(){
+   public String printName(){
     return "Maksym Yarosh";
   }
-  public void printedName(){
+  public String printedName(){
     return "Malik Jamal";
   }
   
-  public void getGroupMembers(){
+  public String getGroupMembers(){
     printingName();
     printName();
     printedName();
   }
   public int division(int num1, int num2){
 
-    if(num2 == 0 || num1 % num2 !==0 )
+    if(num2 == 0 )
       throw new ArithmeticException("The division is invalid");
 
     int q=0;
