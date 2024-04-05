@@ -1,0 +1,33 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/MaksymYarosh/Group1_CIS434_GitAssignment'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                // Build the Java project
+                bat 'mvn clean package'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                // Run unit tests
+                bat 'mvn test'
+            }
+  post {
+                always {
+                    junit 'target/surefire-reports/*.xml'
+                    // Clean up steps that should be performed regardless of pipeline outcome
+                    // For example, you might want to clean up temporary files or stop services
+
+                }
+            }
+        }
+    }
+}
