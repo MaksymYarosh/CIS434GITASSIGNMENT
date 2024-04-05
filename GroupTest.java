@@ -3,58 +3,66 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import java.util.*;
 import static org.junit.Assert.*;
 
-public class GroupTest{
-
-  public GroupTest(){
-  }
+public class GroupTest {
 
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
     }
-    
+
     @After
     public void tearDown() {
     }
 
     @Test
-    public void testPrintingName() {
-        Group instance = new Group();
-        assertEquals("Manikdeep Kaur LNU", instance.printingName());
+    public void testGetGroupMembers() {
+        Group group = new Group();
+        ArrayList<String> expectedMembers = new ArrayList<>();
+        expectedMembers.add("Manikdeep Kaur LNU");
+        expectedMembers.add("Maksym Yashor");
+        expectedMembers.add("Malik Jamal");
+        assertEquals(expectedMembers, group.getGroupMembers());
     }
 
     @Test
     public void testPrintName() {
-        Group instance = new Group();
-        assertEquals("Maksym Yarosh", instance.printName());
+        Group group = new Group();
+        assertEquals("Manikdeep Kaur LNU", group.printingName());
+        assertEquals("Maksym Yashor", group.printName());
+        assertEquals("Maik Jamal", group.printedName());
+
+    }
+
+
+    @Test
+    public void testDivide() {
+        Group group = new Group();
+        assertEquals(5, group.divide(10, 2));
+        assertThrows(ArithmeticException.class, () -> group.divide(10, 0));
     }
 
     @Test
-    public void testPrintedName() {
-        Group instance = new Group();
-        assertEquals("Malik Jamal", instance.printedName());
+    public void testMultiply() {
+        Group group = new Group();
+        assertEquals(15, group.multiply(5, 3));
+        assertEquals(-15, group.multiply(-5, 3));
     }
 
     @Test
-    public void testGetGroupMembers() {
-        Group instance = new Group();
-        instance.getGroupMembers(); // No assertions because it doesn't return anything
+    public void testPower() {
+        Group group = new Group();
+        assertEquals(8, group.power(2, 3));
+        assertEquals(1, group.power(2, 0));
+        assertEquals(0, group.power(0, 3));
     }
-
-    @Test(expected=ArithmeticException.class)
-    public void testIntegerDivision() {
-        Group instance = new Group();
-        assertEquals(2, instance.division(8, 4));//Positive division
-        assertEquals(0, instance.division(0, 5)); // Testing division by zero
-        assertEquals(-2, instance.division(-8,4));//Negative division 
-}
 }
