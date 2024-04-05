@@ -39,16 +39,17 @@ public class GroupTest {
         Group group = new Group();
         assertEquals("Manikdeep Kaur LNU", group.printingName());
         assertEquals("Maksym Yashor", group.printName());
-        assertEquals("Maik Jamal", group.printedName());
-
+        assertEquals("Malik Jamal", group.printedName());
     }
 
 
-    @Test
+    @Test(expected = ArithmeticException.class)
     public void testDivide() {
         Group group = new Group();
+        group.divide(10,0);
         assertEquals(5, group.divide(10, 2));
-        assertThrows(ArithmeticException.class, () -> group.divide(10, 0));
+        assertEquals(-5, group.divide(-10, 2));
+        assertEquals(6, group.divide(13, 2));
     }
 
     @Test
