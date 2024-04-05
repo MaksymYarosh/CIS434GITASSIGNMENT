@@ -1,3 +1,4 @@
+import java.util.arraylist;
 
 public class Group{
   
@@ -11,11 +12,14 @@ public class Group{
     return "Malik Jamal";
   }
   
-  public String getGroupMembers(){
-    printingName();
-    printName();
-    printedName();
-  }
+ public ArrayList<String> getGroupMembers() {
+        ArrayList<String> members = new ArrayList<>();
+        members.add(printingName());
+        members.add(printName());
+        members.add(printedName());
+        return members;
+    }
+  
   public int division(int num1, int num2){
 
     if(num2 == 0 )
